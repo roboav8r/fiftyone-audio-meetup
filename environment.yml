@@ -1,0 +1,28 @@
+# Conda env for the Audio + AI meetup demo.
+#
+# Create:   mamba env create -f environment.yml
+# Activate: mamba activate fo-audio-ai-meetup
+# Then install the FiftyOne SDK separately (keeps any private-index token out
+# of this file and out of `conda env export`): `pip install fiftyone` for OSS,
+# or your org's usual private-index install flow for Enterprise.
+#
+# ffmpeg (with showspectrum / showspectrumpic) is required for the spectrogram
+# videos; it is pulled from conda-forge here so it is on PATH.
+
+name: fo-audio-ai-meetup
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - ffmpeg
+  - pip:
+      - python-dotenv
+      - numpy
+      - librosa
+      - soundfile
+      - matplotlib
+      - tqdm
+      - huggingface_hub
+      - datasets            # streams Clotho-Moment WebDataset tars
+      # Enterprise SDK installed separately via install-fiftyone.sh

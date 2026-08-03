@@ -1,0 +1,12 @@
+{
+  "name": "audio-ai-meetup-slides",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "reveal-md slides.md -w --theme theme/voxel51.css",
+    "static": "reveal-md slides.md --static build --theme theme/voxel51.css"
+  },
+  "devDependencies": {
+    "reveal-md": "^6.1.4"
+  }
+}

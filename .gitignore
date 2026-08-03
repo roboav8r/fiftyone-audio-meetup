@@ -1,0 +1,15 @@
+# Secrets / deployment env
+.env
+
+# Gitignored working dirs: downloads, extracted datasets, generated
+# spectrograms/videos, screenshots, customer-provided files.
+scratch/
+dcase26-task6-amr/scratch/
+
+# reveal-md build artifacts / deps (npm install / npm run static regenerates)
+presentation/node_modules/
+presentation/build/
+
+# Python
+__pycache__/
+*.pyc

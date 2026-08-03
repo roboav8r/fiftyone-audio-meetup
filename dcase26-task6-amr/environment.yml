@@ -1,0 +1,24 @@
+# Conda env for DCASE 2026 Task 6 (Clotho-Moment) staging + load.
+#
+# Create:   mamba env create -f environment.yml
+# Activate: mamba activate fo-dcase26-task6-amr
+# Then install the FiftyOne SDK separately (keeps any private-index token out
+# of this file and out of `conda env export`) for the build step:
+# `pip install fiftyone` for OSS, or your org's usual private-index install
+# flow for Enterprise.
+#
+# The `fo-audio-ai-meetup` env already satisfies these deps, so you can reuse
+# it instead of creating this one.
+name: fo-dcase26-task6-amr
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - python-dotenv
+      - numpy
+      - soundfile           # read wav duration from extracted bytes
+      - tqdm
+      - huggingface_hub     # per-shard tar download (hf_hub_download)
+      # Enterprise SDK installed separately via install-fiftyone.sh

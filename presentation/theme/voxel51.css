@@ -1,0 +1,193 @@
+/*
+ * Voxel51-flavored reveal.js theme: dark grey base, orange accents,
+ * futuristic/HUD feel. Drop-in replacement theme stylesheet (reveal.js
+ * core layout/transitions come from reveal.css and are untouched).
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+:root {
+  --v51-orange: #ff6d04;
+  --v51-orange-bright: #ff9152;
+  --v51-bg: #131417;
+  --v51-bg-panel: #1c1e22;
+  --v51-grey-line: #34373d;
+  --v51-text: #e8e9eb;
+  --v51-text-muted: #9297a1;
+
+  --r-background-color: var(--v51-bg);
+  --r-main-font: "JetBrains Mono", "Space Grotesk", monospace;
+  --r-main-font-size: 34px;
+  --r-main-color: var(--v51-text);
+  --r-block-margin: 20px;
+
+  --r-heading-margin: 0 0 24px 0;
+  --r-heading-font: "Space Grotesk", "JetBrains Mono", sans-serif;
+  --r-heading-color: #ffffff;
+  --r-heading-line-height: 1.15;
+  --r-heading-letter-spacing: 0.01em;
+  --r-heading-text-transform: none;
+  --r-heading-text-shadow: 0 0 26px rgba(255, 109, 4, 0.35);
+  --r-heading-font-weight: 700;
+  --r-heading1-text-shadow: 0 0 34px rgba(255, 109, 4, 0.45);
+  --r-heading1-size: 2.2em;
+  --r-heading2-size: 1.5em;
+  --r-heading3-size: 1.1em;
+  --r-heading4-size: 0.95em;
+
+  --r-code-font: "JetBrains Mono", monospace;
+  --r-link-color: var(--v51-orange);
+  --r-link-color-dark: #cc5800;
+  --r-link-color-hover: var(--v51-orange-bright);
+  --r-selection-background-color: var(--v51-orange);
+  --r-selection-color: #131417;
+}
+
+.reveal {
+  background-color: var(--v51-bg);
+  /* faint HUD grid, gives the "futuristic" texture without being noisy */
+  background-image:
+    linear-gradient(rgba(255, 109, 4, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 109, 4, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section > * {
+  margin: var(--r-block-margin) 0;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-family: var(--r-heading-font);
+}
+
+/* subtle orange rule under H1/H2 as a section marker */
+.reveal h1::after,
+.reveal h2::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 3px;
+  margin-top: 18px;
+  background: linear-gradient(90deg, var(--v51-orange), transparent);
+}
+
+.reveal p,
+.reveal li {
+  color: var(--v51-text);
+  line-height: 1.5;
+}
+
+.reveal ul > li::marker,
+.reveal ol > li::marker {
+  color: var(--v51-orange);
+}
+
+.reveal small,
+.reveal .subtitle {
+  color: var(--v51-text-muted);
+}
+
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 109, 4, 0.4);
+  transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+}
+
+.reveal code {
+  font-family: var(--r-code-font);
+  color: var(--v51-orange-bright);
+  background: rgba(255, 109, 4, 0.1);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+.reveal pre {
+  background: var(--v51-bg-panel);
+  border: 1px solid var(--v51-grey-line);
+  border-left: 3px solid var(--v51-orange);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.reveal pre code {
+  background: transparent;
+  color: var(--v51-text);
+}
+
+.reveal blockquote {
+  background: var(--v51-bg-panel);
+  border-left: 3px solid var(--v51-orange);
+  border-radius: 0 6px 6px 0;
+  padding: 0.6em 1em;
+  color: var(--v51-text-muted);
+  font-style: normal;
+  box-shadow: none;
+  width: auto;
+}
+
+.reveal table {
+  border-collapse: collapse;
+}
+
+.reveal table th {
+  color: var(--v51-orange);
+  border-bottom: 2px solid var(--v51-orange);
+}
+
+.reveal table td,
+.reveal table th {
+  border-bottom: 1px solid var(--v51-grey-line);
+  padding: 0.4em 0.6em;
+}
+
+.reveal hr {
+  border: none;
+  border-top: 1px solid var(--v51-grey-line);
+  margin: 1.2em 0;
+}
+
+/* progress bar + controls pick up --r-link-color already; reinforce for older builds */
+.reveal .progress {
+  color: var(--v51-orange);
+  height: 4px;
+}
+
+.reveal .controls {
+  color: var(--v51-orange);
+}
+
+.reveal .slide-number {
+  background: transparent;
+  color: var(--v51-text-muted);
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* wordmark helper: <p class="wordmark">voxel51</p> on the title slide */
+.reveal .wordmark {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--v51-orange);
+  text-shadow: 0 0 24px rgba(255, 109, 4, 0.5);
+}
+
+/* section-divider slides: <!-- .slide: data-background-color="#1c1e22" --> */
+.reveal .eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.5em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--v51-orange);
+}

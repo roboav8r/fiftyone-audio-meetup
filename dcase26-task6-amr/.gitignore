@@ -1,0 +1,10 @@
+# Secrets / deployment env
+.env
+
+# Gitignored working dir: HF tar downloads, extracted wavs, manifest,
+# shard checkpoint, screenshots.
+scratch/
+
+# Python
+__pycache__/
+*.pyc
