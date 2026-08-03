@@ -28,8 +28,9 @@ this repo only holds the dataloaders, curation/eval scripts, and the deck.
   - **FOE** (Enterprise): copy `.env.example` → `.env` and fill in
     `FIFTYONE_API_URI` / `FIFTYONE_API_KEY` / `FIFTYONE_PYPI_TOKEN`, then
     install the SDK per your org's usual private-index flow.
-- **`fiftyone-audio-toolkit`** installed on that deployment (see its own
-  README) if you want the renderer and embeddings-search panel.
+- **[`fiftyone-audio-toolkit`](https://github.com/roboav8r/fiftyone-audio-toolkit)**
+  installed on that deployment (see its own README) if you want the
+  renderer and embeddings-search panel.
 - **This repo's Python env**:
   ```bash
   mamba env create -f environment.yml
