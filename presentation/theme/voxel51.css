@@ -17,7 +17,7 @@
 
   --r-background-color: var(--v51-bg);
   --r-main-font: "JetBrains Mono", "Space Grotesk", monospace;
-  --r-main-font-size: 34px;
+  --r-main-font-size: 64px;
   --r-main-color: var(--v51-text);
   --r-block-margin: 20px;
 
@@ -54,6 +54,13 @@
 
 .reveal .slides {
   text-align: left;
+}
+
+/* explicit, robust default so body copy never falls back to the browser's
+   black initial color -- more specific rules below (headings, links, code,
+   muted text) still override this via normal cascade/specificity */
+.reveal .slides section {
+  color: var(--v51-text);
 }
 
 .reveal .slides section > * {
@@ -172,6 +179,7 @@
   background: transparent;
   color: var(--v51-text-muted);
   font-family: "JetBrains Mono", monospace;
+  font-size: 1.4em;
 }
 
 /* wordmark helper: <p class="wordmark">voxel51</p> on the title slide */
@@ -190,4 +198,34 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--v51-orange);
+}
+
+/* agenda-recap transition slides: wrap each <li>'s text in one of these */
+.reveal .agenda-current {
+  color: #ffffff;
+  font-weight: 700;
+  border-left: 3px solid var(--v51-orange);
+  padding-left: 0.4em;
+}
+
+.reveal .agenda-dim {
+  color: var(--v51-text-muted);
+}
+
+/* Takeaways slide: overarching-summary bullet */
+.reveal .highlight-item {
+  color: var(--v51-orange-bright);
+  font-weight: 700;
+}
+
+/* Takeaways slide: contact line, set apart as a call-to-action */
+.reveal .contact-highlight {
+  display: inline-block;
+  margin-top: 0.3em;
+  padding: 0.25em 0.7em;
+  color: #ffffff;
+  font-weight: 700;
+  background: rgba(255, 109, 4, 0.15);
+  border: 1px solid var(--v51-orange);
+  border-radius: 6px;
 }
